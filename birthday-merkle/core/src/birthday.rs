@@ -5,9 +5,9 @@ use crate::merkle::{MerkleTree, Node, Proof};
 
 #[derive(Debug, Clone, Serialize, Deserialize, Hashable)]
 pub struct SimpleDate{
-    y: u16,
-    m: u8,
-    d: u8,
+    pub y: u16,
+    pub m: u8,
+    pub d: u8,
 }
 impl SimpleDate {
     pub fn new(y: u16, m: u8, d: u8) -> SimpleDate {
