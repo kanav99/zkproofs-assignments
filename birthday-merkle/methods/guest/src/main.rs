@@ -11,6 +11,9 @@ fn main() {
 
     // TODO: Add code to verify your given date exists in the tree and the age is over 18
     input.proof.verify(&input.bd_merkle_tree, &input.element);
+    assert!(
+        (input.element.y < 2006) || (input.element.y == 2006 && input.element.m < 9) || (input.element.y == 2006 && input.element.m == 9 && input.element.d < 29),
+    );
 
     //*************************************YOUR CODE ENDS HERE*************************************
 

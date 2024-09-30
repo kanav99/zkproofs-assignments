@@ -38,6 +38,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 //************************************YOUR CODE STARTS HERE************************************
 
 // TODO: Check the consistency of the Merkle roots
+    assert_eq!(journal.bd_merkle_tree, root);
 
 //*************************************YOUR CODE ENDS HERE*************************************
   
