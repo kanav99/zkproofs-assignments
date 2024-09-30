@@ -7,11 +7,10 @@ fn main() {
     // Read a Merkle proof from the host.
     let input: PrivateInput = env::read();
 
-    input.proof.verify(&input.bd_merkle_tree, &input.element);
-
     //************************************YOUR CODE STARTS HERE************************************
 
     // TODO: Add code to verify your given date exists in the tree and the age is over 18
+    input.proof.verify(&input.bd_merkle_tree, &input.element);
 
     //*************************************YOUR CODE ENDS HERE*************************************
 

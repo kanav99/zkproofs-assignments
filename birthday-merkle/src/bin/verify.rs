@@ -4,8 +4,7 @@ use std::{error::Error, fs, path::PathBuf};
 use clap::Parser;
 use risc0_zkvm::Receipt;
 use birthday_core::{
-    birthday::{BirthdayMerkleTree,SimpleDate},
-    Journal,
+    birthday::{BirthdayMerkleTree,SimpleDate}, merkle::Node, Journal
 };
 use birthday_methods::BIRTHDAY_ID;
 
@@ -32,7 +31,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let receipt: Receipt = bincode::deserialize(&fs::read(&args.receipt)?)?;
     receipt.verify(BIRTHDAY_ID)?;
     // TODO: Initialize the Merkle root received from the file
-    = bincode::deserialize(&fs::read(&args.m_r)?)?;
+    let root :Node = bincode::deserialize(&fs::read(&args.m_r)?)?;
 
     // Check consistency of the journal against the input Where's Waldo image.
     let journal: Journal = receipt.journal.decode()?;
